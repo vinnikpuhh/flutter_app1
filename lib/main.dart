@@ -17,6 +17,7 @@ class FlutterTutorialApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Drawer Demo'),
+          backgroundColor: Color(0xfff2c94c),
         ),
         drawer: Drawer(
           child: ListView(
@@ -195,9 +196,74 @@ class FlutterTutorialApp extends StatelessWidget {
                 children: [
                   Container(
                     width: double.infinity,
-                    child: SvgPicture.asset('assets/Images/Pizza.svg'),
+                    child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: Image(
+                        image: AssetImage('assets/Images/food1.png'),
+                      ),
+                    ),
                   ),
-                  //SvgPicture.asset('assets/Images/export/Piteat.svg'),
+                  Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(20.0),
+                          child: Row(
+                            children: [
+                              Container(
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Сытый Пит',
+                                      textAlign: TextAlign.start,
+                                      style: TextStyle(
+                                        color: Color(0xff333333),
+                                        fontSize: 18,
+                                        fontFamily: "Noto Sans",
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Image(
+                                      image: AssetImage(
+                                          'assets/Images/export/Ellipse.png'),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Center(
+                          child: FlatButton(
+                            onPressed: () {
+                              print("Button clicked!");
+                            },
+                            child: Text(
+                              "Купить",
+                            ),
+                            textColor: Color(
+                              0xff333333,
+                            ),
+                            color: Color(
+                              0xfff2c94c,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                20,
+                              ),
+                            ),
+                            height: 45,
+                            minWidth: 285,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
