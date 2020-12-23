@@ -189,6 +189,9 @@ class FlutterTutorialApp extends StatelessWidget {
         ),
         body: ListView(
           children: [
+            SizedBox(
+              height: 100,
+            ),
             Container(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
